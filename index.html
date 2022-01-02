@@ -9,7 +9,22 @@
   </head>
   <body>
     <div id="app" v-html="text"></div>
-    <p id="name">{{name}}</p>
+    <p id="name"><strong>Nome:</strong> {{name}}</p>
+    <div id="score">
+      Total de Pontos: {{score}}
+      <br />
+      <strong v-if="score > 5">{{info}}</strong>
+    </div>
+    <div id="list">
+      <ul>
+        <li v-for="person in people">
+          <strong>Nome:</strong> {{person.name + " "}}<span
+            v-text="person.lastName"
+          ></span>
+          <span><strong>Idade:</strong>{{" " + person.age}}</span>
+        </li>
+      </ul>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
